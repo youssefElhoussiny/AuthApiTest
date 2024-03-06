@@ -18,5 +18,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::post('/login', 'ApiAuthController@login');
 Route::post('books' , [BookController::class , 'store'])->name('books.store');
 Route::get('/books' , [BookController::class , 'show'])->name('books.show');
